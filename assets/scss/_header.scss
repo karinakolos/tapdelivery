@@ -1,0 +1,157 @@
+/* Style the navbar */
+
+.header {
+    width: 100%;
+    z-index: 199999999;
+    transition: all 0.2s ease-in-out;
+
+    &.sticky-menu {
+        animation: headerSlideDown 0.95s ease forwards;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.69) 0%, rgba(0, 0, 0, 0) 100%);
+        z-index: 10;
+    }
+}
+
+// The sticky class is added to the navbar with JS when it reaches its scroll position
+.sticky-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* * Toggle Navigation * */
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    z-index: 10;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    padding-top: 1.6em;
+    padding-bottom: 1.6em;
+
+    &__brand {
+        display: flex;
+        align-items: center;
+    }
+
+    #toggle-nav {
+        display: none;
+        order: 2;
+
+        i {
+            font-size: 2em;
+            font-weight: 500;
+        }
+    }
+}
+
+#navbar-header {
+    margin: auto 0;
+    order: 3;
+
+    &>ul {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+
+        &>li {
+            flex: auto;
+            text-align: center;
+            font-size: 1em;
+            margin: 0 2rem;
+            cursor: pointer;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2px;
+                background: #0000;
+                transition: all 0.2s ease-in-out;
+            }
+
+            &.active {
+                .nav-link {
+                    color: #000;
+                }
+
+                &:after {
+                    background: red;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+
+            .nav-link {
+                font-weight: 400;
+                color: red;
+            }
+
+            &:hover {
+                &::after {
+                    background: red;
+                }
+
+                .nav-link {
+                    color: #000;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+
+        #toggle-nav {
+            display: flex;
+            padding: 1rem;
+
+            i {
+                align-self: center;
+            }
+        }
+    }
+
+    #navbar-header {
+        display: none;
+        width: 100%;
+
+        a {
+            font-size: 1.5rem;
+        }
+
+        ul {
+            flex-direction: column;
+
+            li {
+                margin: 1rem 0 0;
+                padding: 0.5rem;
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .navbar__brand {
+        max-width: 150px;
+        margin-top: 0.5em;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .navbar__brand {
+        max-width: 180px;
+    }
+}

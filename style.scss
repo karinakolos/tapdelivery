@@ -1,0 +1,20 @@
+/*!
+Theme Name: TapDelivery
+Version: 1.0
+Description: Theme for tapdelivery.by
+Author: SkyWard.pro
+Author URI: https://skyward.pro
+Text Domain: tapdelivery
+*/
+ 
+// Variables
+@import "assets/scss/_variables.scss";
+@import "assets/utils/sass-space/_sass-space.scss";
+
+// Theme styles
+@import "assets/scss/_fonts.scss";
+@import "assets/scss/_common.scss";
+@import "assets/scss/_header.scss";
+@import "assets/scss/_pages.scss";
+@import "assets/scss/_footer.scss";
+

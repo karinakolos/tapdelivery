@@ -1,0 +1,227 @@
+// Variables
+@import "_variables.scss";
+
+html {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.8rem;
+    letter-spacing: 0.01em;
+    max-width: 100%;
+    box-sizing: border-box;
+    color: $grey;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* responsive adaptivity */
+
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+/* WQHD + */
+
+@media only screen and (min-width: 1500px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: 0;
+    background: 0;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+::selection {
+    background: red;
+    color: #fff;
+}
+
+
+// add transition
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+section {
+    padding: 3rem 0 5rem;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+.h1,
+.h2,
+.h3,
+.h4 {
+    display: block;
+}
+
+.h1 {
+    font-size: $h1-font-size;
+    font-weight: 600;
+    line-height: 4rem;
+}
+
+.h2 {
+    font-size: $h2-font-size;
+    font-weight: 600;
+    line-height: 3.15rem;
+}
+
+.h3 {
+    font-size: $h3-font-size;
+    font-weight: 500;
+    line-height: 2.625rem;
+}
+
+.h4 {
+    font-size: $h4-font-size;
+    font-weight: 500;
+    line-height: 1.375rem;
+}
+
+.h5 {
+    font-size: $h5-font-size;
+}
+
+.h6 {
+    font-size: $h6-font-size;
+}
+
+.h2-after::after {
+    background: $aqua;
+    display: block;
+    content: '';
+    height: 3px;
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-aqua {
+    color: $aqua;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.button {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 4rem;
+    padding: 0.75rem 1.75rem;
+}
+
+.visuallyhidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    margin: 0em 0.5em 1em;
+}
+
+.wpcf7-spinner {
+    margin: 0.5rem auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+
+    html {
+        line-height: 1.5rem;
+    }
+
+    br {
+        display: none;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+
+    .h1 {
+        font-size: 2rem;
+        line-height: 2.625rem;
+    }
+
+    .h2 {
+        font-size: 1.75rem;
+        line-height: 2.125rem;
+    }
+
+    .h3 {
+        font-size: 1.375rem;
+        font-weight: 500;
+        color: #000;
+        line-height: 2.125rem;
+    }
+
+    .h4 {
+        font-size: $h4-font-size;
+        line-height: 2rem;
+    }
+}
