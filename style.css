@@ -819,6 +819,10 @@ Text Domain: tapdelivery
   }
 }
 
+.grecaptcha-badge {
+  display: none;
+}
+
 html {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
@@ -828,12 +832,16 @@ html {
   max-width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #282828;
   overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
+  background: #F5F6FA;
+}
+
+body.modal_opened {
+  overflow-y: hidden;
 }
 
 /* responsive adaptivity */
@@ -882,13 +890,13 @@ button {
 }
 
 ::-moz-selection {
-  background: red;
-  color: #fff;
+  background: #76d2d6;
+  color: #000;
 }
 
 ::selection {
-  background: red;
-  color: #fff;
+  background: #76d2d6;
+  color: #000;
 }
 
 a {
@@ -910,7 +918,8 @@ section {
 .h1,
 .h2,
 .h3,
-.h4 {
+.h4,
+.h5 {
   display: block;
 }
 
@@ -939,7 +948,9 @@ section {
 }
 
 .h5 {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.25rem;
 }
 
 .h6 {
@@ -1059,6 +1070,43 @@ section {
   z-index: 10;
 }
 
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__menu-buttons {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__menu-button {
+  font-weight: 500;
+}
+
+.header__menu-button_aqua {
+  padding: 0.5rem 2rem;
+  border-radius: 0.75rem;
+  color: #fff;
+  margin-left: 1rem;
+  background: #00C3CC;
+}
+
+#navbar-header {
+  margin-left: 2rem;
+}
+
 .sticky-menu {
   position: fixed;
   top: 0;
@@ -1070,9 +1118,6 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -1109,13 +1154,6 @@ nav {
   font-weight: 500;
 }
 
-#navbar-header {
-  margin: auto 0;
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
-}
-
 #navbar-header > ul {
   width: 100%;
   list-style: none;
@@ -1127,6 +1165,9 @@ nav {
           justify-content: space-between;
   padding: 0;
   margin: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #navbar-header > ul > li {
@@ -1149,27 +1190,17 @@ nav {
   transition: all 0.2s ease-in-out;
 }
 
-#navbar-header > ul > li.active .nav-link {
-  color: #000;
-}
-
-#navbar-header > ul > li.active:after {
-  background: red;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
 #navbar-header > ul > li .nav-link {
-  font-weight: 400;
-  color: red;
+  font-weight: 500;
+  color: #000;
 }
 
 #navbar-header > ul > li:hover::after {
-  background: red;
+  background: #00C3CC;
 }
 
 #navbar-header > ul > li:hover .nav-link {
-  color: #000;
+  color: #00C3CC;
 }
 
 @media (max-width: 768px) {
@@ -1217,6 +1248,458 @@ nav {
   .navbar__brand {
     max-width: 180px;
   }
+}
+
+/* * ACCOUNT PAGE * */
+.woocommerce {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.woocommerce h2 {
+  text-align: center;
+}
+
+.woocommerce-MyAccount-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 50%;
+  margin: auto;
+}
+
+.woocommerce nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #00C3CC;
+  padding: 1.5rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.woocommerce nav ul {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.woocommerce nav ul li {
+  padding: 0 2rem;
+}
+
+.woocommerce nav ul li a {
+  color: #fff;
+  font-weight: 500;
+}
+
+.woocommerce-form-login,
+.woocommerce-form-register {
+  width: auto;
+  margin: 0 auto !important;
+  border-color: #00C3CC !important;
+}
+
+.woocommerce-form-login input:not(#rememberme),
+.woocommerce-form-register input:not(#rememberme) {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #00C3CC;
+  background: #fff;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.woocommerce-form-login input:not(#rememberme):focus,
+.woocommerce-form-register input:not(#rememberme):focus {
+  border-width: 3px;
+}
+
+.woocommerce-form-login .form-row:not(.form-row-wide),
+.woocommerce-form-register .form-row:not(.form-row-wide) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  margin-top: 1.25rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.woocommerce-form-login .form-row-wide,
+.woocommerce-form-register .form-row-wide {
+  margin-bottom: 0.25rem;
+}
+
+.woocommerce-form-login label,
+.woocommerce-form-register label {
+  padding: 0 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.25rem !important;
+}
+
+.woocommerce-form-login button[type="submit"],
+.woocommerce-form-register button[type="submit"] {
+  background: #00C3CC;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  display: block;
+  padding: 0.75rem 3rem;
+}
+
+.woocommerce-form-login .woocommerce-form-login__rememberme,
+.woocommerce-form-register .woocommerce-form-login__rememberme {
+  margin-bottom: 0;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.woocommerce-form-login .woocommerce-form-login__rememberme span,
+.woocommerce-form-register .woocommerce-form-login__rememberme span {
+  margin-left: 0.5rem;
+}
+
+.woocommerce-form-login .lost_password a,
+.woocommerce-form-register .lost_password a {
+  color: #000;
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+.form-block {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
+  margin: auto;
+}
+
+.form-block br {
+  display: none;
+}
+
+.form-block input,
+.form-block textarea,
+.form-block select {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #00C3CC;
+  background: #fff;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.form-block input:focus,
+.form-block textarea:focus,
+.form-block select:focus {
+  border-width: 3px;
+}
+
+.form-block .wpcf7-not-valid-tip {
+  padding: 0 1rem;
+}
+
+.form-block textarea {
+  height: 4rem;
+}
+
+.form-block select {
+  background-image: url("/wp-content/uploads/2022/02/arrow_down.svg");
+  background-repeat: no-repeat !important;
+  background-position: center right !important;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-position-x: 98% !important;
+}
+
+.form-block .form-field {
+  margin-bottom: 1.5rem;
+}
+
+.form-block .form-field .h5 {
+  padding: 0 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-block .form-field.submit {
+  text-align: center;
+}
+
+.form-block .form-field.submit input {
+  width: 50%;
+  background: #00C3CC;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.form-block .form-field.required .h5::after {
+  content: '*';
+  display: inline-block;
+  color: #fe4747;
+  margin-left: 5px;
+}
+
+.woocommerce form .form-row .required {
+  color: #fe4747;
+}
+
+.edit-account input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #00C3CC;
+  background: #fff;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.edit-account input:focus {
+  border-width: 3px;
+}
+
+.edit-account label {
+  padding: 0 1rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.25rem !important;
+}
+
+.edit-account em {
+  padding: 0 1rem;
+}
+
+.edit-account fieldset {
+  margin: 2rem 0;
+  border-color: #00C3CC;
+}
+
+.edit-account legend {
+  font-weight: 600;
+  color: #00C3CC;
+  font-size: 1.5rem;
+}
+
+.edit-account button[type="submit"] {
+  width: 50%;
+  background: #00C3CC;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 0.75rem;
+  display: block;
+  margin: auto;
+}
+
+.custom-overlay {
+  position: absolute;
+  z-index: -100;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000%;
+  background: rgba(0, 0, 0, 0.4);
+  content: "";
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.modal {
+  position: fixed;
+  top: 5%;
+  width: 30%;
+  left: 35%;
+  padding: 2em;
+  background: #f5f6fa;
+  max-height: 90%;
+  border: 2px solid #00C3CC;
+  opacity: 0;
+  z-index: -100;
+  border-radius: 0.75rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.modal__close {
+  right: 2px;
+  top: -2px;
+  color: #000 !important;
+  cursor: pointer;
+  font-size: 2.5em;
+  height: 35px;
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  width: 35px;
+}
+
+.modal_opened .custom-overlay {
+  z-index: 1999999999;
+  opacity: 1;
+}
+
+.modal_opened.signin .modal__signin {
+  z-index: 19999999999;
+  opacity: 1;
+}
+
+.modal_opened.register .modal__register {
+  z-index: 19999999999;
+  opacity: 1;
+}
+
+.woocommerce form .show-password-input,
+.woocommerce-page form .show-password-input {
+  top: auto;
+}
+
+/* * SOCIAL FIXED ICON * */
+.social-fixed {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 2rem;
+  height: 2rem;
+  background: #f5f6fa;
+  -webkit-box-shadow: 0px 0px 21px #00C3CC;
+          box-shadow: 0px 0px 21px #00C3CC;
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.social-fixed_hidden {
+  bottom: -10rem;
+  opacity: 0;
+}
+
+.social-fixed svg {
+  width: 100%;
+}
+
+.social-block {
+  position: fixed;
+  bottom: -100rem;
+  right: 2rem;
+  width: 15%;
+  background: #f5f6fa;
+  -webkit-box-shadow: 0px 0px 21px #00C3CC;
+          box-shadow: 0px 0px 21px #00C3CC;
+  border-radius: 0.75rem;
+  padding: 2rem 1rem;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 99999999999;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-block_opened {
+  opacity: 1;
+  bottom: 2rem;
+}
+
+.social-block__close {
+  right: 2px;
+  top: -2px;
+  color: #000 !important;
+  cursor: pointer;
+  font-size: 2.5em;
+  height: 35px;
+  line-height: 1;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  width: 35px;
+}
+
+.social-block p {
+  line-height: 1.25rem;
+}
+
+.social-block p:after {
+  content: '';
+  display: block;
+  width: 30%;
+  height: 2px;
+  background: #00C3CC;
+  margin: 0.5rem 0 0;
+}
+
+.social-block a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1.5rem;
+}
+
+.social-block a span {
+  color: #fff;
+  background: #00C3CC;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.75rem;
+}
+
+.social-block img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.75rem;
 }
 
 /* *FOOTER STYLES* */

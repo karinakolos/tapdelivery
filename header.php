@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head() ?>
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/utils/flexboxgrid/flexboxgrid.css">
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css" />
+    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.min.css" />
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/utils/splide/splide-core.min.css">
 </head>
 
-<body class="<? if(  current_user_can('administrator') ) { echo 'is_admin';} ?>">
+<body class="<? if(  is_user_logged_in() ) { echo 'logged-in';} ?>">
 <h1 class="visuallyhidden"></h1>
     <header>
         <div class="header" id="header">
             <div class="container navbar">
                 <nav>
                     <a class="navbar__brand" href="/">
-                        <img src="" data-skip-lazy="" width="" height="" style="width:100%; height:auto;" alt="">
+                        <img src="/wp-content/uploads/2022/02/site_logo.png" data-skip-lazy="" width="200" height="72" style="width:100%; height:auto;" alt="">
                     </a>
-
+                    
+                    <div class="header__menu">
                     <?php 
                     
                         wp_nav_menu(array(
@@ -33,7 +34,11 @@
                         )); 
 
                     ?>
-
+                    <div class="header__menu-buttons">
+                        <a class="header__menu-button register-btn">Регистрация</a>
+                        <a href class="header__menu-button header__menu-button_aqua signin-btn">Войти</a>
+                    </div>
+                    </div>
                     <span id="toggle-nav">
                         <i class="icon-bars" data-icon="a"></i>
                     </span>

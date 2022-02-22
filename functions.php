@@ -151,3 +151,92 @@ function change_nav_menu_items( $items, $args ) {
 
 	return $new_items;
 }*/
+
+/*CUSTOM ENDPOINTS TO ACCOUNT PAGE*/
+
+add_filter ( 'woocommerce_account_menu_items', 'silva_remove_my_account_links' );
+function silva_remove_my_account_links( $menu_links ){
+    unset( $menu_links['downloads'] ); 
+	//unset( $menu_links['dashboard'] ); // Remove Dashboard
+	unset( $menu_links['payment-methods'] ); // Remove Payment Methods
+	unset( $menu_links['orders'] ); // Remove Orders
+	//unset( $menu_links['downloads'] ); // Disable Downloads
+	//unset( $menu_links['edit-account'] ); // Remove Account details tab
+	//unset( $menu_links['customer-logout'] ); // Remove Logout link
+	unset( $menu_links['edit-address'] );
+	return $menu_links;
+}
+
+function wpb_woo_my_account_order() {
+	$myorder = array(
+		'edit-account'       => __( 'Мой аккаунт', 'woocommerce' ),
+	);
+
+	return $myorder;
+}
+add_filter ( 'woocommerce_account_menu_items', 'wpb_woo_my_account_order' );
+
+
+//ОФОРМИТЬ ЗАЯВКУ
+
+add_filter ( 'woocommerce_account_menu_items', 'leave_request_endpoint', 40 );
+function leave_request_endpoint( $menu_links ){
+ 
+	$menu_links = array_slice( $menu_links, 0, 2, true ) 
+	+ array( 'leave_request' => 'Оформить заявку на доставку' )
+	+ array_slice( $menu_links, 2, NULL, true );
+ 
+	return $menu_links;
+ 
+}
+
+add_action( 'init', 'leave_request_add_endpoint' );
+function leave_request_add_endpoint() {
+ 
+	add_rewrite_endpoint( 'leave_request', EP_PAGES );
+ 
+}
+
+add_action( 'woocommerce_account_leave_request_endpoint', 'leave_request_endpoint_content' );
+function leave_request_endpoint_content() {
+	?>
+	<span class="check-text h4" id="#check"></span>
+	<div class="form-block">
+		<?php
+		echo do_shortcode('[contact-form-7 id="770" title="tap test"]');
+		?>
+	</div>
+	<?php
+}
+
+//ОТправить код
+
+add_filter ( 'woocommerce_account_menu_items', 'send_code_endpoint', 40 );
+function send_code_endpoint( $menu_links ){
+ 
+	$menu_links = array_slice( $menu_links, 0, 3, true ) 
+	+ array( 'send_code' => 'Отправить код получения' )
+	+ array_slice( $menu_links, 3, NULL, true );
+ 
+	return $menu_links;
+ 
+}
+
+add_action( 'init', 'send_code_add_endpoint' );
+function send_code_add_endpoint() {
+ 
+	add_rewrite_endpoint( 'send_code', EP_PAGES );
+ 
+}
+
+add_action( 'woocommerce_account_send_code_endpoint', 'send_code_endpoint_content' );
+function send_code_endpoint_content() {
+	?>
+	<span class="check-text h4" id="#check"></span>
+	<div class="form-block">
+		<?php
+		echo do_shortcode('[contact-form-7 id="775"]');
+		?>
+	</div>
+	<?php
+}

@@ -1,6 +1,8 @@
 // Variables
 @import "_variables.scss";
-
+.grecaptcha-badge {
+    display: none;
+}
 html {
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
@@ -9,12 +11,16 @@ html {
     letter-spacing: 0.01em;
     max-width: 100%;
     box-sizing: border-box;
-    color: $grey;
     overflow-x: hidden;
 }
 
 body {
     overflow-x: hidden;
+    background: #F5F6FA;;
+}
+
+body.modal_opened {
+    overflow-y: hidden;
 }
 
 /* responsive adaptivity */
@@ -64,8 +70,8 @@ button {
 }
 
 ::selection {
-    background: red;
-    color: #fff;
+    background: #76d2d6;
+    color: #000;
 }
 
 
@@ -89,7 +95,8 @@ section {
 .h1,
 .h2,
 .h3,
-.h4 {
+.h4,
+.h5 {
     display: block;
 }
 
@@ -119,6 +126,8 @@ section {
 
 .h5 {
     font-size: $h5-font-size;
+    font-weight: 400;
+    line-height: 1.25rem;
 }
 
 .h6 {
