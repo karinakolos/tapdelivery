@@ -22,6 +22,14 @@ $(".woocommerce-form-login__submit").click(function(){
     return false;
 });
 */
+
+$("input[placeholder='Email'").attr("placeholder", "E-mail")
+$("input[placeholder='First Name'").attr("placeholder", "Имя")
+$("input[placeholder='Last Name'").attr("placeholder", "Фамилия")
+$("input[placeholder='Password'").attr("placeholder", "Пароль")
+$("input[placeholder='Confirm Password'").attr("placeholder", "Подтвердите пароль")
+$('.xoo-aff-checkbox_single').prop('checked', true);
+
 $(".wpcf7-submit").click(function () {
     if ($(this).hasClass("check")) {
         $(".check-text").text("");
