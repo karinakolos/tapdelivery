@@ -17,7 +17,7 @@
             <div class="container navbar">
                 <nav>
                     <a class="navbar__brand" href="/">
-                        <img src="/wp-content/uploads/2022/02/site_logo.png" data-skip-lazy="" width="200" height="72" style="width:100%; height:auto;" alt="">
+                        <img src="/wp-content/uploads/2022/02/logo_tap.svg" data-skip-lazy="" width="274" height="100" style="width:100%; height:auto;" alt="">
                     </a>
                     
                     <div class="header__menu">
@@ -35,8 +35,8 @@
 
                     ?>
                     <div class="header__menu-buttons">
-                        <a class="header__menu-button register-btn">Регистрация</a>
-                        <a href class="header__menu-button header__menu-button_aqua signin-btn">Войти</a>
+                        <a class="header__menu-button register-btn xoo-el-reg-tgr">Регистрация</a>
+                        <a class="header__menu-button header__menu-button_aqua signin-btn xoo-el-login-tgr">Войти</a>
                     </div>
                     </div>
                     <span id="toggle-nav">

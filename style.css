@@ -1273,7 +1273,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 50%;
+  width: 50%;
   margin: auto;
 }
 
@@ -1399,13 +1399,6 @@ nav {
   font-size: 0.75rem;
 }
 
-.form-block {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 70%;
-          flex: 0 0 70%;
-  margin: auto;
-}
-
 .form-block br {
   display: none;
 }
@@ -1474,6 +1467,40 @@ nav {
   display: inline-block;
   color: #fe4747;
   margin-left: 5px;
+}
+
+.form-block .form-field p,
+.form-block .form-field ol {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+}
+
+.form-block .form-field .add-text {
+  padding: 0 1rem;
+}
+
+.form-block .form-field p:not(.add-text) {
+  padding: 0 1rem;
+  font-weight: 500;
+}
+
+.form-block .form-field p:not(.add-text) * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+
+.form-block .form-field p:not(.add-text) span {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-block .form-field p:not(.add-text) input {
+  width: auto;
+  margin-right: 7px;
 }
 
 .woocommerce form .form-row .required {

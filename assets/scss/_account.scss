@@ -11,7 +11,7 @@
     &-MyAccount-content {
         display: flex;
         flex-direction: column;
-        max-width: 50%;
+        width: 50%;
         margin: auto;
     }
 
@@ -110,8 +110,6 @@
 }
 
 .form-block {
-    flex: 0 0 70%;
-    margin: auto;
 
     br {
         display: none;
@@ -177,6 +175,36 @@
                 margin-left: 5px;
             }
         }
+
+        p,
+        ol {
+            margin: 0 0 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .add-text {
+            padding: 0 1rem;
+        }
+
+        p:not(.add-text) {
+            padding: 0 1rem;
+            font-weight: 500;
+
+            * {
+                display: flex;
+                width: 100%;
+                margin: 0;
+            }
+
+            span {
+                align-items: center;
+            }
+
+            input {
+                width: auto;
+                margin-right: 7px;
+            }
+        }
     }
 }
 
@@ -235,7 +263,7 @@
 }
 
 
-.custom-overlay {
+/*.custom-overlay {
     position: absolute;
     z-index: -100;
     opacity: 0;
@@ -303,4 +331,4 @@
 .woocommerce form .show-password-input,
 .woocommerce-page form .show-password-input {
     top: auto;
-}
+}*/

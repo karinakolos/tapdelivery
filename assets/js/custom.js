@@ -1,3 +1,27 @@
+/*if ($("body").hasClass("logged-in")) {
+    $(".signin-btn").attr("href", "/my-account");
+    $(".register-btn").css("cursor", "no-drop");
+    $(".register-btn").css("color", "#d6d6d6");
+} else {
+    $(".signin-btn").removeAttr("href");
+    $(".signin-btn").click(function () {
+        $("body").addClass("modal_opened signin");
+    });
+    $(".register-btn").click(function () {
+        $("body").addClass("modal_opened register");
+    });
+}
+
+function goToURL() {
+    location.href = '/my-account';
+
+  }
+
+$(".woocommerce-form-login__submit").click(function(){
+    location.replace("/my-account");
+    return false;
+});
+*/
 $(".wpcf7-submit").click(function () {
     if ($(this).hasClass("check")) {
         $(".check-text").text("");
@@ -20,20 +44,6 @@ $(".wpcf7-submit").click(function () {
         return false;
     }
 });
-
-if ($("body").hasClass("logged-in")) {
-    $(".signin-btn").attr("href", "/my-account");
-    $(".register-btn").css("cursor", "no-drop");
-    $(".register-btn").css("color", "#d6d6d6");
-} else {
-    $(".signin-btn").removeAttr("href");
-    $(".signin-btn").click(function () {
-        $("body").addClass("modal_opened signin");
-    });
-    $(".register-btn").click(function () {
-        $("body").addClass("modal_opened register");
-    });
-}
 
 $(".modal__close").click(function () {
     $("body").removeClass("modal_opened signin register");

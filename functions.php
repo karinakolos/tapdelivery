@@ -169,7 +169,7 @@ function silva_remove_my_account_links( $menu_links ){
 
 function wpb_woo_my_account_order() {
 	$myorder = array(
-		'edit-account'       => __( 'Мой аккаунт', 'woocommerce' ),
+		'edit-account'       => __( 'Личный кабинет', 'woocommerce' ),
 	);
 
 	return $myorder;
@@ -183,7 +183,7 @@ add_filter ( 'woocommerce_account_menu_items', 'leave_request_endpoint', 40 );
 function leave_request_endpoint( $menu_links ){
  
 	$menu_links = array_slice( $menu_links, 0, 2, true ) 
-	+ array( 'leave_request' => 'Оформить заявку на доставку' )
+	+ array( 'leave_request' => 'Оформить заявку' )
 	+ array_slice( $menu_links, 2, NULL, true );
  
 	return $menu_links;
@@ -215,7 +215,7 @@ add_filter ( 'woocommerce_account_menu_items', 'send_code_endpoint', 40 );
 function send_code_endpoint( $menu_links ){
  
 	$menu_links = array_slice( $menu_links, 0, 3, true ) 
-	+ array( 'send_code' => 'Отправить код получения' )
+	+ array( 'send_code' => 'Отправить код' )
 	+ array_slice( $menu_links, 3, NULL, true );
  
 	return $menu_links;
@@ -236,6 +236,38 @@ function send_code_endpoint_content() {
 	<div class="form-block">
 		<?php
 		echo do_shortcode('[contact-form-7 id="775"]');
+		?>
+	</div>
+	<?php
+}
+
+//Изменить адрес доставки
+
+add_filter ( 'woocommerce_account_menu_items', 'edit_address_endpoint', 40 );
+function edit_address_endpoint( $menu_links ){
+ 
+	$menu_links = array_slice( $menu_links, 0, 3, true ) 
+	+ array( 'edit_address' => 'Изменить адрес доставки' )
+	+ array_slice( $menu_links, 3, NULL, true );
+ 
+	return $menu_links;
+ 
+}
+
+add_action( 'init', 'edit_address_add_endpoint' );
+function edit_address_add_endpoint() {
+ 
+	add_rewrite_endpoint( 'edit_address', EP_PAGES );
+ 
+}
+
+add_action( 'woocommerce_account_edit_address_endpoint', 'edit_address_endpoint_content' );
+function edit_address_endpoint_content() {
+	?>
+	<span class="check-text h4" id="#check"></span>
+	<div class="form-block">
+		<?php
+		echo do_shortcode('[contact-form-7 id="785"]');
 		?>
 	</div>
 	<?php
