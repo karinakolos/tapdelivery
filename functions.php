@@ -272,3 +272,35 @@ function edit_address_endpoint_content() {
 	</div>
 	<?php
 }
+
+//Как заказать
+
+add_filter ( 'woocommerce_account_menu_items', 'instruction_endpoint', 40 );
+function instruction_endpoint( $menu_links ){
+ 
+	$menu_links = array_slice( $menu_links, 0, 4, true ) 
+	+ array( 'instruction' => 'Как заказать?' )
+	+ array_slice( $menu_links, 4, NULL, true );
+ 
+	return $menu_links;
+ 
+}
+
+add_action( 'init', 'instruction_add_endpoint' );
+function instruction_add_endpoint() {
+ 
+	add_rewrite_endpoint( 'instruction', EP_PAGES );
+ 
+}
+
+add_action( 'woocommerce_account_instruction_endpoint', 'instruction_endpoint_content' );
+function instruction_endpoint_content() {
+	?>
+	<span class="check-text h4" id="#check"></span>
+	<div class="form-block">
+		<?php
+		echo do_shortcode('[contact-form-7 id="5"]');
+		?>
+	</div>
+	<?php
+}
