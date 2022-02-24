@@ -1,2 +1,111 @@
-/* * POPUPS STYLES * */ 
+/* * POPUPS STYLES * */
 
+.xoo-el {
+
+    &-modal * {
+        border-radius: 0.75rem;
+    }
+
+    &-srcont {
+        overflow-y: hidden;
+    }
+
+    &-sidebar {
+        display: none;
+    }
+
+    &-inmodal {
+        max-width: 40% !important;
+
+        @media (max-width: 768px) {
+            max-width: 100% !important;
+            max-height: 75%;
+        }
+    }
+
+    &-main {
+        background: #F5F6FA !important;
+        
+        @media (max-width: 768px) {
+            padding: 2rem 0 1rem;
+        }
+    }
+
+    &-popup-active .xoo-el-opac {
+        background: rgba(0, 0, 0, 0.5) !important;
+        opacity: 1 !important;
+    }
+
+    &-tabs {
+
+        li {
+            transition: all 0.2s ease-in-out;
+        }
+
+        .xoo-el-login-tgr {
+            border-radius: 0.75rem 0 0 0.75rem;
+            background: #d6d6d6 !important;
+        }
+
+        .xoo-el-reg-tgr {
+            border-radius: 0 0.75rem 0.75rem 0;
+            background: #d6d6d6 !important;
+        }
+
+        .xoo-el-active {
+            background: $aqua !important;
+        }
+    }
+
+    .xoo-el-section {
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.xoo-aff-input-group .xoo-aff-input-icon {
+    background-color: #fff;
+    color: $aqua;
+    border: 1px solid $aqua;
+    border-radius: 0.75rem 0 0 0.75rem;
+}
+
+.xoo-aff-group input[type="text"],
+.xoo-aff-group input[type="password"],
+.xoo-aff-group input[type="email"],
+.xoo-aff-group input[type="number"],
+.xoo-aff-group select,
+.xoo-aff-group select+.select2 {
+    border: 1px solid $aqua;
+    border-left: 0;
+    border-radius: 0 0.75rem 0.75rem 0;
+}
+
+.xoo_el_reg_terms_cont {
+    display: none;
+}
+
+.xoo-el-form-container button.btn.button.xoo-el-action-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    background: $aqua;
+}
+
+span.xoo-el-close {
+    background-color: #f5f6fa;
+    border-color: #f5f6fa;
+    box-shadow: 0 0 13px -5px #000;
+}
+
+.xoo-el-icon-cancel-circle:before {
+    content: "×";
+    color: #000;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 700;
+    height: 1.75rem;
+    width: 1.75rem;
+    text-align: center;
+    display: block;
+    line-height: 1.3rem;
+}

@@ -1,5 +1,5 @@
 $("#toggle-nav").click(function () {
-    $("#navbar-header").slideToggle(400);
+    $(".header__menu").slideToggle(400);
     if ($("#toggle-nav i").hasClass("icon-bars")) {
         $("#toggle-nav i").removeClass("icon-bars");
         $("#toggle-nav i").addClass("icon-cross");
@@ -11,9 +11,9 @@ $("#toggle-nav").click(function () {
 
 function windowResizeHandler() {
     if (screen.width < 768) {
-        $("#navbar-header").css("display", "none");
+        $(".header__menu").css("display", "none");
     } else if (screen.width > 767) {
-        $("#navbar-header").css("display", "flex");
+        $(".header__menu").css("display", "flex");
     }
 }
 

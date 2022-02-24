@@ -47,17 +47,20 @@
         }
 
         &__close {
-            right: 2px;
-            top: -2px;
+            right: -10px;
+            top: -10px;
             color: #000 !important;
             cursor: pointer;
-            font-size: 2.5em;
+            font-size: 2.5rem;
             height: 35px;
-            line-height: 1;
+            line-height: 35px;
             position: absolute;
             text-align: center;
             vertical-align: middle;
             width: 35px;
+            background: #f5f6fa;
+            border-radius: 50%;
+            box-shadow: 0 0 13px -5px #000;
         }
 
         p {

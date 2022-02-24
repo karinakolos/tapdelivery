@@ -57,7 +57,7 @@
         transition: all 0.1s ease-in-out;
 
         &:focus {
-            border-width: 3px;
+            background: #ededed;
         }
     }
 

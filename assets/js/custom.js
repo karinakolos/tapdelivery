@@ -1,27 +1,10 @@
-/*if ($("body").hasClass("logged-in")) {
+if ($("body").hasClass("logged-in")) {
     $(".signin-btn").attr("href", "/my-account");
     $(".register-btn").css("cursor", "no-drop");
     $(".register-btn").css("color", "#d6d6d6");
 } else {
     $(".signin-btn").removeAttr("href");
-    $(".signin-btn").click(function () {
-        $("body").addClass("modal_opened signin");
-    });
-    $(".register-btn").click(function () {
-        $("body").addClass("modal_opened register");
-    });
 }
-
-function goToURL() {
-    location.href = '/my-account';
-
-  }
-
-$(".woocommerce-form-login__submit").click(function(){
-    location.replace("/my-account");
-    return false;
-});
-*/
 
 $("input[placeholder='Email'").attr("placeholder", "E-mail")
 $("input[placeholder='First Name'").attr("placeholder", "Имя")
@@ -70,3 +53,30 @@ $(".social-block__close").click(function () {
     $(".social-block").removeClass("social-block_opened");
     $(".social-fixed").removeClass("social-fixed_hidden");
 })
+
+//ACCORDIONS
+
+$(".faq__title").click(function () {
+    let item_id = $(this).attr("item_id");
+    let target_class = '.faq__item[item_id="' + item_id + '"]';
+    if ($(target_class).hasClass("faq__item_active")) {
+        $(target_class).removeClass("faq__item_active");
+    } else {
+        if ($(".faq__item").hasClass("faq__item_active")) {
+            $(".faq__item").removeClass("faq__item_active");
+        }
+        $(target_class).addClass("faq__item_active");
+    }
+})
+
+// smooth scrollin
+
+$('a[href^="#"').on('click', function() {
+
+    let href = $(this).attr('href');
+
+    $('html, body').animate({
+        scrollTop: $(href).offset().top
+    });
+    return false;
+});
