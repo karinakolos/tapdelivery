@@ -1497,7 +1497,7 @@ nav {
 .form-block input:focus,
 .form-block textarea:focus,
 .form-block select:focus {
-  background: #fff;
+  background: #f5f6fa;
 }
 
 .form-block .wpcf7-not-valid-tip {
@@ -1597,7 +1597,7 @@ nav {
 }
 
 .edit-account input:focus {
-  background: #fff;
+  background: #f5f6fa;
 }
 
 .edit-account label {
@@ -1857,7 +1857,7 @@ nav {
 .xoo-aff-group input[type="number"]:focus,
 .xoo-aff-group select:focus,
 .xoo-aff-group select + .select2:focus {
-  background: #fff;
+  background: #f5f6fa;
 }
 
 .xoo_el_reg_terms_cont {
