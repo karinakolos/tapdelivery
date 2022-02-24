@@ -1403,94 +1403,73 @@ nav {
   font-weight: 500;
 }
 
-.woocommerce-form-login,
+/*.woocommerce-form-login,
 .woocommerce-form-register {
-  width: auto;
-  margin: 0 auto !important;
-  border-color: #00C3CC !important;
-}
+    width: auto;
+    margin: 0 auto !important;
+    border-color: $aqua !important;
 
-.woocommerce-form-login input:not(#rememberme),
-.woocommerce-form-register input:not(#rememberme) {
-  padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
-  border: 1px solid #00C3CC;
-  background: #fff;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-}
+    input:not(#rememberme) {
+        padding: 0.5rem 1rem;
+        border-radius: 0.75rem;
+        border: 1px solid $aqua;
+        background: #fff;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 0.1s ease-in-out;
 
-.woocommerce-form-login input:not(#rememberme):focus,
-.woocommerce-form-register input:not(#rememberme):focus {
-  background: #ededed;
-}
+        &:focus {
+            background: #ededed;
+        }
+    }
 
-.woocommerce-form-login .form-row:not(.form-row-wide),
-.woocommerce-form-register .form-row:not(.form-row-wide) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  margin-top: 1.25rem;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-bottom: 1rem;
-}
+    .form-row:not(.form-row-wide) {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 1.25rem;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+    }
 
-.woocommerce-form-login .form-row-wide,
-.woocommerce-form-register .form-row-wide {
-  margin-bottom: 0.25rem;
-}
+    .form-row-wide {
+        margin-bottom: 0.25rem;
+    }
 
-.woocommerce-form-login label,
-.woocommerce-form-register label {
-  padding: 0 1rem;
-  margin-bottom: 0.75rem;
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.25rem !important;
-}
+    label {
+        padding: 0 1rem;
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+        font-weight: 400;
+        line-height: 1.25rem !important;
+    }
 
-.woocommerce-form-login button[type="submit"],
-.woocommerce-form-register button[type="submit"] {
-  background: #00C3CC;
-  color: #fff;
-  font-weight: 500;
-  border-radius: 0.75rem;
-  display: block;
-  padding: 0.75rem 3rem;
-}
+    button[type="submit"] {
+        background: $aqua;
+        color: #fff;
+        font-weight: 500;
+        border-radius: 0.75rem;
+        display: block;
+        padding: 0.75rem 3rem;
+    }
 
-.woocommerce-form-login .woocommerce-form-login__rememberme,
-.woocommerce-form-register .woocommerce-form-login__rememberme {
-  margin-bottom: 0;
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
+    .woocommerce-form-login__rememberme {
+        margin-bottom: 0;
+        display: flex !important;
+        align-items: center;
 
-.woocommerce-form-login .woocommerce-form-login__rememberme span,
-.woocommerce-form-register .woocommerce-form-login__rememberme span {
-  margin-left: 0.5rem;
-}
+        span {
+            margin-left: 0.5rem;
+        }
+    }
 
-.woocommerce-form-login .lost_password a,
-.woocommerce-form-register .lost_password a {
-  color: #000;
-  font-style: italic;
-  font-size: 0.75rem;
-}
-
+    .lost_password {
+        a {
+            color: #000;
+            font-style: italic;
+            font-size: 0.75rem;
+        }
+    }
+}*/
 @media (max-width: 768px) {
   .form-block {
     padding: 0 0.5rem;
@@ -1507,7 +1486,7 @@ nav {
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid #00C3CC;
-  background: #fff;
+  background: #f5f6fa;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1518,7 +1497,7 @@ nav {
 .form-block input:focus,
 .form-block textarea:focus,
 .form-block select:focus {
-  border-width: 3px;
+  background: #fff;
 }
 
 .form-block .wpcf7-not-valid-tip {
@@ -1609,7 +1588,7 @@ nav {
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid #00C3CC;
-  background: #fff;
+  background: #f5f6fa;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1618,7 +1597,7 @@ nav {
 }
 
 .edit-account input:focus {
-  border-width: 3px;
+  background: #fff;
 }
 
 .edit-account label {
@@ -1655,75 +1634,6 @@ nav {
   margin: auto;
 }
 
-/*.custom-overlay {
-    position: absolute;
-    z-index: -100;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1000%;
-    background: rgba(0, 0, 0, 0.4);
-    content: "";
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-}
-
-.modal {
-    position: fixed;
-    top: 5%;
-    width: 30%;
-    left: 35%;
-    padding: 2em;
-    background: #f5f6fa;
-    max-height: 90%;
-    border: 2px solid $aqua;
-    opacity: 0;
-    z-index: -100;
-    border-radius: 0.75rem;
-    transition: all 0.2s ease-in;
-
-    &__close {
-        right: 2px;
-        top: -2px;
-        color: #000 !important;
-        cursor: pointer;
-        font-size: 2.5em;
-        height: 35px;
-        line-height: 1;
-        position: absolute;
-        text-align: center;
-        vertical-align: middle;
-        width: 35px;
-    }
-}
-
-.modal_opened {
-
-    .custom-overlay {
-        z-index: 1999999999;
-        opacity: 1;
-    }
-}
-
-.modal_opened.signin {
-    .modal__signin {
-        z-index: 19999999999;
-        opacity: 1;
-    }
-}
-
-.modal_opened.register {
-    .modal__register {
-        z-index: 19999999999;
-        opacity: 1;
-    }
-}
-
-.woocommerce form .show-password-input,
-.woocommerce-page form .show-password-input {
-    top: auto;
-}*/
 /* * SOCIAL FIXED ICON * */
 .social-fixed {
   position: fixed;
@@ -1777,7 +1687,13 @@ nav {
 
 @media (max-width: 768px) {
   .social-block {
-    width: 50%;
+    width: 52%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .social-block {
+    width: 25%;
   }
 }
 
@@ -1850,6 +1766,12 @@ nav {
   overflow-y: hidden;
 }
 
+@media (max-width: 768px) {
+  .xoo-el-srcont {
+    overflow-y: auto;
+  }
+}
+
 .xoo-el-sidebar {
   display: none;
 }
@@ -1862,6 +1784,12 @@ nav {
   .xoo-el-inmodal {
     max-width: 100% !important;
     max-height: 75%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .xoo-el-inmodal {
+    max-width: 60% !important;
   }
 }
 
@@ -1905,7 +1833,7 @@ nav {
 }
 
 .xoo-aff-input-group .xoo-aff-input-icon {
-  background-color: #fff;
+  background-color: #f5f6fa;
   color: #00C3CC;
   border: 1px solid #00C3CC;
   border-radius: 0.75rem 0 0 0.75rem;
@@ -1920,6 +1848,16 @@ nav {
   border: 1px solid #00C3CC;
   border-left: 0;
   border-radius: 0 0.75rem 0.75rem 0;
+  background: #f5f6fa;
+}
+
+.xoo-aff-group input[type="text"]:focus,
+.xoo-aff-group input[type="password"]:focus,
+.xoo-aff-group input[type="email"]:focus,
+.xoo-aff-group input[type="number"]:focus,
+.xoo-aff-group select:focus,
+.xoo-aff-group select + .select2:focus {
+  background: #fff;
 }
 
 .xoo_el_reg_terms_cont {

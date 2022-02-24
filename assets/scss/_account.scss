@@ -60,7 +60,7 @@
     }
 }
 
-.woocommerce-form-login,
+/*.woocommerce-form-login,
 .woocommerce-form-register {
     width: auto;
     margin: 0 auto !important;
@@ -126,7 +126,7 @@
             font-size: 0.75rem;
         }
     }
-}
+}*/
 
 .form-block {
     @media (max-width: 768px) {
@@ -143,13 +143,13 @@
         padding: 0.5rem 1rem;
         border-radius: 0.75rem;
         border: 1px solid $aqua;
-        background: #fff;
+        background: #f5f6fa;
         width: 100%;
         box-sizing: border-box;
         transition: all 0.1s ease-in-out;
 
         &:focus {
-            border-width: 3px;
+            background: #fff;;
         }
     }
 
@@ -239,13 +239,13 @@
         padding: 0.5rem 1rem;
         border-radius: 0.75rem;
         border: 1px solid $aqua;
-        background: #fff;
+        background: #f5f6fa;
         width: 100%;
         box-sizing: border-box;
         transition: all 0.1s ease-in-out;
 
         &:focus {
-            border-width: 3px;
+            background: #fff;
         }
     }
 
@@ -283,74 +283,3 @@
         margin: auto;
     }
 }
-
-
-/*.custom-overlay {
-    position: absolute;
-    z-index: -100;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1000%;
-    background: rgba(0, 0, 0, 0.4);
-    content: "";
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-}
-
-.modal {
-    position: fixed;
-    top: 5%;
-    width: 30%;
-    left: 35%;
-    padding: 2em;
-    background: #f5f6fa;
-    max-height: 90%;
-    border: 2px solid $aqua;
-    opacity: 0;
-    z-index: -100;
-    border-radius: 0.75rem;
-    transition: all 0.2s ease-in;
-
-    &__close {
-        right: 2px;
-        top: -2px;
-        color: #000 !important;
-        cursor: pointer;
-        font-size: 2.5em;
-        height: 35px;
-        line-height: 1;
-        position: absolute;
-        text-align: center;
-        vertical-align: middle;
-        width: 35px;
-    }
-}
-
-.modal_opened {
-
-    .custom-overlay {
-        z-index: 1999999999;
-        opacity: 1;
-    }
-}
-
-.modal_opened.signin {
-    .modal__signin {
-        z-index: 19999999999;
-        opacity: 1;
-    }
-}
-
-.modal_opened.register {
-    .modal__register {
-        z-index: 19999999999;
-        opacity: 1;
-    }
-}
-
-.woocommerce form .show-password-input,
-.woocommerce-page form .show-password-input {
-    top: auto;
-}*/

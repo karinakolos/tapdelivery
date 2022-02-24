@@ -13,28 +13,31 @@ $("input[placeholder='Password'").attr("placeholder", "Пароль")
 $("input[placeholder='Confirm Password'").attr("placeholder", "Подтвердите пароль")
 $('.xoo-aff-checkbox_single').prop('checked', true);
 
-$(".wpcf7-submit").click(function () {
+/*$(".wpcf7-submit").click(function () {
     if ($(this).hasClass("check")) {
         $(".check-text").text("");
         $(".form-block").css("margin-top", "0");
     } else {
         $(this).addClass("check");
-        $("wpcf7-form-control[aria-required='true']").each(function () {
-            let val = $("wpcf7-form-control[aria-required='true']").val();
-            console.log(val);
-            if (val == "") {
-                $(".check-text").text("Перепроверьте, пожалуйста, все ли данные вы ввели.");
-            }
-        });
-        let bool = $(".check-text").text();
-        if (bool == "") {
-            $(".check-text").text("Перепроверьте, пожалуйста, все ли данные введены корректно.");
-        }
+        $(".check-text").text("Перепроверьте, пожалуйста, все ли данные введены корректно.");
         $(window).scrollTop(0);
         $(".form-block").css("margin-top", "2rem");
         return false;
     }
-});
+});*/
+
+$(".wpcf7").submit(function(event, i) {
+    if ($(".wpcf7-submit").hasClass("check")) {
+        $(".check-text").text("");
+        $(".form-block").css("margin-top", "0");
+    } else {
+        $(".wpcf7-submit").addClass("check");
+        $(".check-text").text("Перепроверьте, пожалуйста, все ли данные введены корректно.");
+        $(window).scrollTop(0);
+        $(".form-block").css("margin-top", "2rem");
+        return false;
+    }
+})
 
 $(".modal__close").click(function () {
     $("body").removeClass("modal_opened signin register");
