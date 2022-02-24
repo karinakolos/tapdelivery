@@ -203,7 +203,7 @@ function leave_request_endpoint_content() {
 	<span class="check-text h4" id="#check"></span>
 	<div class="form-block">
 		<?php
-		echo do_shortcode('[contact-form-7 id="21" title="tap test"]');
+		echo do_shortcode('[contact-form-7 id="34"]');
 		?>
 	</div>
 	<?php
@@ -235,7 +235,7 @@ function send_code_endpoint_content() {
 	<span class="check-text h4" id="#check"></span>
 	<div class="form-block">
 		<?php
-		echo do_shortcode('[contact-form-7 id="20"]');
+		echo do_shortcode('[contact-form-7 id="35"]');
 		?>
 	</div>
 	<?php
@@ -267,7 +267,7 @@ function edit_address_endpoint_content() {
 	<span class="check-text h4" id="#check"></span>
 	<div class="form-block">
 		<?php
-		echo do_shortcode('[contact-form-7 id="11"]');
+		echo do_shortcode('[contact-form-7 id="5"]');
 		?>
 	</div>
 	<?php
