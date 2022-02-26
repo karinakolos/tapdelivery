@@ -1,4 +1,4 @@
-$("#toggle-nav").click(function () {
+/*$("#toggle-nav").click(function () {
     $(".header__menu").slideToggle(400);
     if ($("#toggle-nav i").hasClass("icon-bars")) {
         $("#toggle-nav i").removeClass("icon-bars");
@@ -17,4 +17,4 @@ function windowResizeHandler() {
     }
 }
 
-window.addEventListener("resize", windowResizeHandler);
+window.addEventListener("resize", windowResizeHandler);*/

@@ -883,6 +883,11 @@ body {
   background: #F5F6FA;
 }
 
+main {
+  z-index: 1;
+  position: relative;
+}
+
 /* responsive adaptivity */
 @media only screen and (min-width: 768px) {
   html {
@@ -1242,7 +1247,8 @@ nav {
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 1rem;
+    padding: 1rem 0;
+    position: unset;
   }
   .navbar nav {
     -webkit-box-pack: justify;
@@ -1253,22 +1259,13 @@ nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 1rem;
+    padding: 1rem 2rem 1rem 1rem;
+    z-index: 99999999;
   }
   .navbar #toggle-nav i {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-  }
-  .header__menu {
-    display: none;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
   #navbar-header {
     width: 100%;
@@ -1276,7 +1273,7 @@ nav {
     margin-bottom: 1rem;
   }
   #navbar-header a {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   #navbar-header ul {
     -webkit-box-orient: vertical;
@@ -1286,10 +1283,96 @@ nav {
   }
   #navbar-header ul li {
     margin: 1rem 0 0;
-    padding: 0.5rem;
+    width: 100%;
+    text-align: left;
   }
   #navbar-header ul li::after {
     display: none;
+  }
+  #navbar-header ul li.has-children {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #navbar-header ul li.has-children svg {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 5%;
+            flex: 0 0 5%;
+    margin-left: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  #navbar-header ul li.has-children > ul {
+    display: none;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    list-style: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 1rem;
+  }
+  #navbar-header ul li.dropdown_opened a {
+    color: #000 !important;
+  }
+  #navbar-header ul li.dropdown_opened a:hover {
+    color: #00C3CC !important;
+  }
+  .signin-btn {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .navbar__brand {
+    max-width: 150px;
+    padding-left: 1rem;
+  }
+  .custom-overlay {
+    visibility: hidden;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.65);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    position: fixed;
+  }
+  .custom-overlay_opened {
+    visibility: visible;
+    opacity: 1;
+  }
+  .header__menu {
+    position: absolute;
+    width: 65%;
+    top: 0;
+    left: -75%;
+    background: #F5F6FA;
+    z-index: 999999999;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 0 0.5rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  .header__menu_opened {
+    left: 0;
   }
   .header__menu-buttons {
     width: 100%;
@@ -1302,15 +1385,7 @@ nav {
             flex-direction: column;
   }
   .header__menu-button {
-    padding: 0.5rem 4rem;
-    font-size: 1.5rem;
-  }
-  .signin-btn {
-    margin-left: 0;
-    margin-top: 1rem;
-  }
-  .navbar__brand {
-    max-width: 150px;
+    padding: 0.5rem 5rem;
   }
 }
 
@@ -1353,6 +1428,10 @@ nav {
   }
 }
 
+.woocommerce-MyAccount-content > p {
+  text-align: center;
+}
+
 .woocommerce nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1373,10 +1452,6 @@ nav {
 
 @media (max-width: 768px) {
   .woocommerce nav ul {
-    overflow-x: auto;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
     padding: 1rem 0.5rem;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -1390,11 +1465,15 @@ nav {
 
 @media (max-width: 768px) {
   .woocommerce nav ul li {
-    padding: 0 2.5rem 0 0;
-    text-align: center;
+    /*padding: 0 2.5rem 0 0;
+                    text-align: center;
+
+                    &:last-child {
+                        padding: 0;
+                    }*/
   }
-  .woocommerce nav ul li:last-child {
-    padding: 0;
+  .woocommerce nav ul li:not(.is-active) {
+    display: none;
   }
 }
 
@@ -1584,6 +1663,12 @@ nav {
   color: #fe4747;
 }
 
+@media (max-width: 768px) {
+  .edit-account {
+    padding: 0 0.5rem;
+  }
+}
+
 .edit-account input {
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
@@ -1769,6 +1854,7 @@ nav {
 @media (max-width: 768px) {
   .xoo-el-srcont {
     overflow-y: auto;
+    background: #F5F6FA !important;
   }
 }
 

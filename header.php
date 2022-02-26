@@ -42,6 +42,7 @@
                             <a class="header__menu-button header__menu-button_aqua signin-btn xoo-el-login-tgr">Войти</a>
                         </div>
                     </div>
+                    <div class="custom-overlay"></div>
                 </nav>
             </div>
         </div>

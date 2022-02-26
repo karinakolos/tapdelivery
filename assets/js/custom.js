@@ -17,26 +17,18 @@ $(".wpcf7-submit").click(function () {
     if ($(this).hasClass("check")) {
         $(".check-text").text("");
         $(".form-block").css("margin-top", "0");
+        $(".check-text").css("padding", "0");
+        $(".check-text").css("border", "0");
     } else {
         $(this).addClass("check");
         $(".check-text").text("Перепроверьте, пожалуйста, все ли данные введены корректно.");
+        $(".check-text").css("border", "1px solid #fe4747");
+        $(".check-text").css("padding", "0.5rem");
         $(window).scrollTop(0);
         $(".form-block").css("margin-top", "2rem");
         return false;
     }
 });
-
-/*$(".wpcf7").submit(function(event, i) {
-    if ($(".wpcf7-submit").hasClass("check")) {
-        $(".check-text").text("");
-        $(".form-block").css("margin-top", "0");
-    } else {
-        $(".wpcf7-submit").addClass("check");
-        $(".check-text").text("Перепроверьте, пожалуйста, все ли данные введены корректно.");
-        $(window).scrollTop(0);
-        $(".form-block").css("margin-top", "2rem");
-    }
-})*/
 
 $(".modal__close").click(function () {
     $("body").removeClass("modal_opened signin register");
@@ -81,4 +73,34 @@ $('a[href^="#"').on('click', function() {
         scrollTop: $(href).offset().top
     });
     return false;
+});
+
+$("#toggle-nav").click(function () {
+    if ($(".header__menu").hasClass("header__menu_opened")) {
+        $(".header__menu").removeClass("header__menu_opened");
+        $(".custom-overlay").removeClass("custom-overlay_opened");
+        $("body").css("overflow-y", "auto");
+        $("#toggle-nav i").css("color", "#000");
+    } else {
+        $(".header__menu").addClass("header__menu_opened");
+        $(".custom-overlay").addClass("custom-overlay_opened");
+        $("body").css("overflow-y", "hidden");
+        $("#toggle-nav i").css("color", "#F5F6FA");
+    }
+    if ($("#toggle-nav i").hasClass("icon-bars")) {
+        $("#toggle-nav i").removeClass("icon-bars");
+        $("#toggle-nav i").addClass("icon-cross");
+    } else {
+        $("#toggle-nav i").removeClass("icon-cross");
+        $("#toggle-nav i").addClass("icon-bars");
+    }
+});
+
+$(".dropdown-toggle").click(function () {
+    $(".dropdown").slideToggle(400);
+    if ($(this).parent().hasClass("dropdown_opened")) {
+        $(this).parent().removeClass("dropdown_opened");
+    } else {
+        $(this).parent().addClass("dropdown_opened");
+    }
 });

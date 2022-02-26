@@ -139,18 +139,31 @@ wp_enqueue_script('my-custom-script', get_template_directory_uri() .'/assets/uti
 
 /* *Add custom links in responsive menu* */
 
-/*add_filter( 'wp_nav_menu_items', 'change_nav_menu_items', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'change_nav_menu_items', 10, 2 );
 
 function change_nav_menu_items( $items, $args ) {
 	if ( 'header-menu' == $args->theme_location ) {
-		$first_menu_item .= '
-		<li class="hidden-lg"><a href="tel:+79699995685">+7 (969) 999 56 85</a></li>
-		<li class="hidden-lg menu-mail"><a href="mailto:info@indiba.com.ru">info@indiba.com.ru</a></li>';
-		$new_items = $first_menu_item . $items;
+		$menu_items .= '
+		<li class="menu-item has-children hidden-md hidden-lg"><a href="/my-account" class="nav-link">Мой аккаунт</a><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		viewBox="0 0 330 330" xml:space="preserve" class="dropdown-toggle">
+   <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+	   c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+	   s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+   </svg>
+		<ul class="dropdown">
+			<li><a href="/my-account/edit-account/" class="nav-link">Личный кабинет</a></li>
+			<li><a href="/my-account/leave_request/" class="nav-link">Отправить заявку</a></li>
+			<li><a href="/my-account/send_code/" class="nav-link">Отправить код</a></li>
+			<li><a href="/my-account/edit_address/" class="nav-link">Изменить адрес доставки</a></li>
+			<li><a href="/my-account/instruction/" class="nav-link">Инструкция</a></li>
+			<li><a href="' . wp_logout_url() . '" class="nav-link">Выйти</a></li>
+		</ul>
+		</li>';
+		$new_items = $items . $menu_items;
 	}
 
 	return $new_items;
-}*/
+}
 
 /*CUSTOM ENDPOINTS TO ACCOUNT PAGE*/
 
@@ -166,15 +179,6 @@ function silva_remove_my_account_links( $menu_links ){
 	unset( $menu_links['edit-address'] );
 	return $menu_links;
 }
-
-function wpb_woo_my_account_order() {
-	$myorder = array(
-		'edit-account'       => __( 'Личный кабинет', 'woocommerce' ),
-	);
-
-	return $myorder;
-}
-add_filter ( 'woocommerce_account_menu_items', 'wpb_woo_my_account_order' );
 
 
 //ОФОРМИТЬ ЗАЯВКУ
@@ -304,3 +308,19 @@ function instruction_endpoint_content() {
 	</div>
 	<?php
 }
+
+
+
+function wpb_woo_my_account_order() {
+	$myorder = array(
+		'edit-account'       => __( 'Личный кабинет', 'woocommerce' ),
+		'leave_request'       => __( 'Отправить заявку', 'woocommerce' ),
+		'send_code'       => __( 'Отправить код', 'woocommerce' ),
+		'edit_address'       => __( 'Изменить адрес доставки', 'woocommerce' ),
+		'instruction'       => __( 'Как заказать?', 'woocommerce' ),
+		'customer-logout'       => __( 'Выйти', 'woocommerce' ),
+	);
+
+	return $myorder;
+}
+add_filter ( 'woocommerce_account_menu_items', 'wpb_woo_my_account_order' );
