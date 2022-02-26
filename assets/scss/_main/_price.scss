@@ -1,0 +1,56 @@
+/* * PRICE SECTION * */
+.price {
+  position: relative;
+  .h2 {
+    text-align: center;
+  }
+  .h2::after {
+    content: "";
+    display: block;
+    background-color: $aqua;
+    width: 8.4rem;
+    height: 2px;
+    margin: 1rem auto 3rem;
+  }
+  &__text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+  }
+  &__text-column:nth-child(3) {
+    margin: 0 auto 5rem;
+  }
+  .text-aqua {
+    font-size: 7.5rem;
+    line-height: 7.7rem;
+    align-items: center;
+    color: #00c3cc;
+    background: #ffffff;
+    border-radius: 41px;
+    padding: 1rem 3.5rem;
+  }
+  &__title {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    padding: 1.3rem 0;
+  }
+  &__subtitle {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    padding: 1rem 0 0;
+  }
+  &__block {
+    color: $aqua;
+    font-style: italic;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

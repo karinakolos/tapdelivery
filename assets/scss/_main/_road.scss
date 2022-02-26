@@ -1,0 +1,61 @@
+/* * ROAD SECTION * */
+.road {
+  &__image-column {
+    align-self: center;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      img {
+        width: 80%;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 1.5rem;
+    padding-right: 4rem;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  &__number {
+    color: $aqua;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    flex: 0 0 8%;
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+      color: #000;
+      font-size: 1rem;
+      line-height: inherit;
+      font-weight: 400;
+      text-align: center;
+
+      &::after {
+        content: ".";
+        display: inline-block;
+      }
+    }
+  }
+  &__text {
+    font-size: 1.1rem;
+    line-height: 1.37rem;
+  }
+
+  .h2 {
+    line-height: 2.75rem;
+    margin-bottom: 2.25rem;
+
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+}

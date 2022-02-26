@@ -1,0 +1,19 @@
+/* * SECTION INTRO * */
+
+.intro {
+  .row {
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+  }
+
+  &__subtitle {
+    padding-right: 10rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}
