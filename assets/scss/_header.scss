@@ -183,6 +183,10 @@ nav {
                     }
                 }
 
+                .dropdown-toggle {
+                    transition: all 0.1s ease-in-out;
+                }
+
                 &.dropdown_opened {
                     a {
                         color: #000 !important;
@@ -190,6 +194,10 @@ nav {
                         &:hover {
                             color: $aqua !important;
                         }
+                    }
+
+                    .dropdown-toggle {
+                        transform: rotate(180deg);
                     }
                 }
             }
