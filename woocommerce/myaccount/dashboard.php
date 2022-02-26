@@ -28,8 +28,10 @@ $allowed_html = array(
 );
 ?>
 <div class="account-promo">
-	<span class="h3">Акция</span>
-	<p><strong>5%</strong> скидка на любой заказ с iHerb по промокоду <strong>EZP9688</strong></p>
+	<span class="h3">Скидки</span>
+	<p><strong>5%</strong> скидка на iHerb при использовании кода <strong>EZP9688</strong></p>
+	<p>Скидка <strong>5$</strong> на первый заказ на iHerb при использовании кода <strong>EZP9688</strong></p>
+	<p><strong>Бесплатная доставка</strong> на пункт самовывоза каждого <strong>10</strong> заказа в календарном месяце</p>
 </div>
 <p>
 	<?php

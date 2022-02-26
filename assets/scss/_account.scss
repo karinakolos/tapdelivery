@@ -9,21 +9,14 @@
     }
 
     .account-promo {
-        text-align: center;
         padding: 1.5rem;
         box-shadow: 0px 0px 21px $aqua;
         margin: 1rem 0.5rem 2rem;
         border-radius: 0.75rem;
 
         p {
-            margin-top: 0.5rem !important;
+            margin-top: 1rem;
             font-size: 1.1rem;
-            width: 50%;
-            margin: auto;
-
-            @media (max-width: 768px) {
-                width: 80%;
-            }
         }
     }
 
